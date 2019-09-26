@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count-prime</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FIND-Prime</title>
+</head>
+<body>
+<input id="inputNumber" type="text">
+<button onclick="prime()" value="">find prime</button>
+<p id="outPrimeNumber"></p>
+<script>
+    function prime() {
+        let count = 0;
+        let start = 1;
+        let num = document.getElementById('inputNumber').value;
+        while (count < num) {
+            if (checkPrime(start)) {
+                count++;
+                document.getElementById('outPrimeNumber').innerText += start + "-";
+            }
+            start++;
+        }
+    }
+
+    function checkPrime(num) {
+        if (num < 2) {
+            return false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+    }
+</script>
+</body>
+</html>
+</body>
+</html>
